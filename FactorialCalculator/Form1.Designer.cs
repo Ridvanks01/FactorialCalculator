@@ -33,7 +33,8 @@
             this.topText = new System.Windows.Forms.Label();
             this.nbrText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rsltBox = new System.Windows.Forms.Label();
+            this.rsltBox = new System.Windows.Forms.TextBox();
+            this.creatorName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nbrArea
@@ -41,14 +42,15 @@
             this.nbrArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nbrArea.Location = new System.Drawing.Point(323, 164);
             this.nbrArea.Name = "nbrArea";
-            this.nbrArea.Size = new System.Drawing.Size(211, 27);
+            this.nbrArea.Size = new System.Drawing.Size(291, 27);
             this.nbrArea.TabIndex = 0;
+            this.nbrArea.TextChanged += new System.EventHandler(this.nbrArea_TextChanged);
             // 
             // calcBtn
             // 
             this.calcBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.calcBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.calcBtn.Location = new System.Drawing.Point(261, 317);
+            this.calcBtn.Location = new System.Drawing.Point(267, 398);
             this.calcBtn.Name = "calcBtn";
             this.calcBtn.Size = new System.Drawing.Size(202, 55);
             this.calcBtn.TabIndex = 1;
@@ -92,13 +94,23 @@
             // 
             // rsltBox
             // 
-            this.rsltBox.AutoSize = true;
-            this.rsltBox.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rsltBox.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.rsltBox.Location = new System.Drawing.Point(323, 231);
+            this.rsltBox.Location = new System.Drawing.Point(323, 242);
+            this.rsltBox.Multiline = true;
             this.rsltBox.Name = "rsltBox";
-            this.rsltBox.Size = new System.Drawing.Size(0, 38);
+            this.rsltBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.rsltBox.Size = new System.Drawing.Size(291, 121);
             this.rsltBox.TabIndex = 5;
+            // 
+            // creatorName
+            // 
+            this.creatorName.AutoSize = true;
+            this.creatorName.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.creatorName.ForeColor = System.Drawing.Color.Orange;
+            this.creatorName.Location = new System.Drawing.Point(12, 481);
+            this.creatorName.Name = "creatorName";
+            this.creatorName.Size = new System.Drawing.Size(315, 20);
+            this.creatorName.TabIndex = 6;
+            this.creatorName.Text = "This program was created by Ridvan KARASUBASI";
             // 
             // Form1
             // 
@@ -106,6 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(752, 510);
+            this.Controls.Add(this.creatorName);
             this.Controls.Add(this.rsltBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nbrText);
@@ -127,6 +140,7 @@
         private Label topText;
         private Label nbrText;
         private Label label1;
-        private Label rsltBox;
+        private TextBox rsltBox;
+        private Label creatorName;
     }
 }

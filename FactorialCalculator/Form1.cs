@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace FactorialCalculator
 {
     public partial class Form1 : Form
@@ -9,8 +11,23 @@ namespace FactorialCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt32(nbrArea.Text);
-            long factorial = 1;
+
+            BigInteger n;
+            BigInteger factorial = 1;
+
+            try
+            {
+                n = BigInteger.Parse(nbrArea.Text);
+                Console.WriteLine(n);
+            }
+            catch (FormatException)
+            {
+
+                MessageBox.Show(String.Format("Unable to convert the string '{0}' to a BigInteger value.",
+                                  nbrArea.Text), "Number Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             while (n > 1)
             {
@@ -27,6 +44,11 @@ namespace FactorialCalculator
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nbrArea_TextChanged(object sender, EventArgs e)
         {
 
         }
